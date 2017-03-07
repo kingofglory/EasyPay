@@ -9,6 +9,7 @@ EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付�
 易支付编码实现遵循设计模式六大原则，并且使用了单例以及策略模式来实现整个库,扩展性良好,可以轻松扩展其他支付方式如百度，美团等。支付方式类继承IPayStrategy接口，支付信息类实现IPayInfo接口，再分别传入场景类EasyPay中即可。具体请参照代码中支付宝或者微信或者银联支付方式封装。
 
 ------
+``` java
 ##项目结构
 ├── activity
 │   ├── UnionPayAssistActivity.java     //银联辅助Activity，负责调起银联支付接口以及接收回调。客户端无需关心。
@@ -31,6 +32,7 @@ EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付�
       ├── WXPay.java                      //微信支付api封装，实现了IPayStrategy接口
       └── WXPayInfoImpli.java
 
+```
 ------
 
 ##Screenshot（截屏）

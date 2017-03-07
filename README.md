@@ -47,7 +47,9 @@ EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付�
 
 	compile 'com.xgr.easypay:EasyPay:1.0.2'
 
+	
 下载库后作为module导入：
+
 
     compile project(':easypay')
 
@@ -191,7 +193,9 @@ public class WXPayEntryActivity extends WXPayEntryBaseActivity {
 
 	MIT License
 
+	
 	Copyright (c) 2017 yuqirong
+	
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy
 	of this software and associated documentation files (the "Software"), to deal
@@ -200,6 +204,7 @@ public class WXPayEntryActivity extends WXPayEntryBaseActivity {
 	copies of the Software, and to permit persons to whom the Software is
 	furnished to do so, subject to the following conditions:
 
+	
 	The above copyright notice and this permission notice shall be included in all
 	copies or substantial portions of the Software.
 

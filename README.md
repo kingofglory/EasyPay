@@ -35,7 +35,7 @@ EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付�
 
 ##Screenshot（截屏）
 
-![screenshot.gif](https://github.com/yuqirong/CardSwipeLayout/blob/master/screenshots/screenshot.gif)
+![screenshot.gif](https://github.com/kingofglory/EasyPay/blob/master/screensshot/screenshot.gif)
 
 ##Usage（使用）
 

@@ -194,7 +194,7 @@ public class WXPayEntryActivity extends WXPayEntryBaseActivity {
 	MIT License
 
 	
-	Copyright (c) 2017 yuqirong
+	Copyright (c) 2017 kingofglory
 	
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy

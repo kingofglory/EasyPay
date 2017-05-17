@@ -5,15 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.xgr.alipay.alipay.AliPay;
+import com.xgr.alipay.alipay.AlipayInfoImpli;
 import com.xgr.easypay.EasyPay;
-import com.xgr.easypay.alipay.AliPay;
-import com.xgr.easypay.alipay.AlipayInfoImpli;
 import com.xgr.easypay.callback.IPayCallback;
-import com.xgr.easypay.unionpay.Mode;
-import com.xgr.easypay.unionpay.UnionPay;
-import com.xgr.easypay.unionpay.UnionPayInfoImpli;
-import com.xgr.easypay.wxpay.WXPay;
-import com.xgr.easypay.wxpay.WXPayInfoImpli;
+import com.xgr.unionpay.unionpay.Mode;
+import com.xgr.unionpay.unionpay.UnionPay;
+import com.xgr.unionpay.unionpay.UnionPayInfoImpli;
+import com.xgr.wechatpay.wxpay.WXPay;
+import com.xgr.wechatpay.wxpay.WXPayInfoImpli;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         UnionPay unionPay = new UnionPay();
         //构造银联订单实体。一般都是由服务端直接返回。测试时可以用Mode.TEST,发布时用Mode.RELEASE。
         UnionPayInfoImpli unionPayInfoImpli = new UnionPayInfoImpli();
-        unionPayInfoImpli.setTn("814144587819703061900");
+        unionPayInfoImpli.setTn("491521855162343546901");
         unionPayInfoImpli.setMode(Mode.TEST);
         //策略场景类调起支付方法开始支付，以及接收回调。
         EasyPay.pay(unionPay, this, unionPayInfoImpli, new IPayCallback() {

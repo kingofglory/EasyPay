@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         UnionPay unionPay = new UnionPay();
         //构造银联订单实体。一般都是由服务端直接返回。测试时可以用Mode.TEST,发布时用Mode.RELEASE。
         UnionPayInfoImpli unionPayInfoImpli = new UnionPayInfoImpli();
-        unionPayInfoImpli.setTn("491521855162343546901");
+        unionPayInfoImpli.setTn("625623784203097901200");
         unionPayInfoImpli.setMode(Mode.TEST);
         //策略场景类调起支付方法开始支付，以及接收回调。
         EasyPay.pay(unionPay, this, unionPayInfoImpli, new IPayCallback() {

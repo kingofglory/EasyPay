@@ -26,8 +26,12 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile 'com.xgr.easypay:EasyPay:1.0.4'
-    compile 'com.xgr.easypay:alipay:1.0.4'
-    compile 'com.xgr.easypay:unionpay:1.0.4'
-    compile 'com.xgr.easypay:wechatpay:1.0.4'
+    compile project(':easypay')
+    compile project(':unionpay')
+    compile project(':wechatpay')
+    compile project(':alipay')
+//    compile 'com.xgr.easypay:EasyPay:1.0.4'
+//    compile 'com.xgr.easypay:alipay:1.0.4'
+//    compile 'com.xgr.easypay:unionpay:1.0.4'
+//    compile 'com.xgr.easypay:wechatpay:1.0.4'
 }

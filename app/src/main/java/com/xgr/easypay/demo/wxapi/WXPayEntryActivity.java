@@ -10,7 +10,8 @@
 */
 package com.xgr.easypay.demo.wxapi;
 
-import com.xgr.easypay.activity.WXPayEntryBaseActivity;
+
+import com.xgr.wechatpay.activity.WXPayEntryBaseActivity;
 
 /**
  * 文 件 名: WXPayEntryActivity

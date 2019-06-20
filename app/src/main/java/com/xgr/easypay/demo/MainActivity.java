@@ -3,6 +3,8 @@ package com.xgr.easypay.demo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.StackView;
 import android.widget.Toast;
 
 import com.xgr.easypay.EasyPay;
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         UnionPay unionPay = new UnionPay();
         //构造银联订单实体。一般都是由服务端直接返回。测试时可以用Mode.TEST,发布时用Mode.RELEASE。
         UnionPayInfoImpli unionPayInfoImpli = new UnionPayInfoImpli();
-        unionPayInfoImpli.setTn("814144587819703061900");
+        unionPayInfoImpli.setTn("530053894658629434700");
         unionPayInfoImpli.setMode(Mode.TEST);
         //策略场景类调起支付方法开始支付，以及接收回调。
         EasyPay.pay(unionPay, this, unionPayInfoImpli, new IPayCallback() {

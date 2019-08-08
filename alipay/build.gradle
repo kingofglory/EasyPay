@@ -3,10 +3,14 @@ apply plugin: 'com.novoda.bintray-release'
 allprojects {
     repositories {
         jcenter()
+        flatDir {
+            dirs 'libs'
+        }
     }
     //加上这些
     tasks.withType(Javadoc) {
-        options{ encoding "UTF-8"
+        options {
+            encoding "UTF-8"
             charSet 'UTF-8'
             links "http://docs.oracle.com/javase/7/docs/api"
         }
@@ -17,7 +21,7 @@ android {
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -49,5 +53,8 @@ dependencies {
     })
     api 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
+
+    implementation files('libs/alipaySdk-15.6.5-20190718211159.aar')
+
     compileOnly project(':easypay')
 }

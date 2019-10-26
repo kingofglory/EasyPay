@@ -5,7 +5,17 @@
                  android:label="@string/app_name"
                  android:supportsRtl="true"
     >
-
+        <activity
+            android:name="com.xgr.wechatpay.activity.WXPayActivity"
+            android:launchMode="singleTop"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale|screenLayout|keyboardHidden"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity-alias
+            android:name="${APPLICATION_ID}.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="com.xgr.wechatpay.activity.WXPayActivity" />
     </application>
 
 </manifest>

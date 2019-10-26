@@ -11,6 +11,7 @@
 package com.xgr.wechatpay.wxpay;
 
 import android.app.Activity;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.tencent.mm.opensdk.constants.Build;
@@ -35,17 +36,17 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
     private WXPayInfoImpli payInfoImpli;
     private static IPayCallback sPayCallback;
     private IWXAPI mWXApi;
+    private boolean initializated;
 
-    private WXPay(Activity mActivity,String wxAppId) {
-        mWXApi = WXAPIFactory.createWXAPI(mActivity.getApplicationContext(), null);
-        mWXApi.registerApp(wxAppId);
+    private WXPay() {
+
     }
 
-    public static WXPay getInstance(Activity mActivity,String wxAppId){
+    public static WXPay getInstance(){
         if(mWXPay == null){
             synchronized (WXPay.class){
                 if(mWXPay == null) {
-                    mWXPay = new WXPay(mActivity,wxAppId);
+                    mWXPay = new WXPay();
                 }
             }
         }
@@ -56,20 +57,32 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
         return mWXApi;
     }
 
+    private void initWXApi(Context context, String appId) {
+        mWXApi = WXAPIFactory.createWXAPI(context.getApplicationContext(), appId);
+        mWXApi.registerApp(appId);
+        initializated = true;
+    }
+
     @Override
     public void pay(Activity activity, WXPayInfoImpli payInfo, IPayCallback payCallback) {
         this.payInfoImpli = payInfo;
         sPayCallback = payCallback;
-        if(!check()) {
+
+        if(payInfoImpli == null || TextUtils.isEmpty(payInfoImpli.getAppid()) || TextUtils.isEmpty(payInfoImpli.getPartnerid())
+                || TextUtils.isEmpty(payInfoImpli.getPrepayId()) || TextUtils.isEmpty(payInfoImpli.getPackageValue()) ||
+                TextUtils.isEmpty(payInfoImpli.getNonceStr()) || TextUtils.isEmpty(payInfoImpli.getTimestamp()) ||
+                TextUtils.isEmpty(payInfoImpli.getSign())) {
             if(payCallback != null) {
                 payCallback.failed();
             }
             return;
         }
-        if(payInfoImpli == null || TextUtils.isEmpty(payInfoImpli.getAppid()) || TextUtils.isEmpty(payInfoImpli.getPartnerid())
-                || TextUtils.isEmpty(payInfoImpli.getPrepayId()) || TextUtils.isEmpty(payInfoImpli.getPackageValue()) ||
-                TextUtils.isEmpty(payInfoImpli.getNonceStr()) || TextUtils.isEmpty(payInfoImpli.getTimestamp()) ||
-                TextUtils.isEmpty(payInfoImpli.getSign())) {
+
+        if (!initializated) {
+            initWXApi(activity.getApplicationContext(), payInfoImpli.getAppid());
+        }
+
+        if(!check()) {
             if(payCallback != null) {
                 payCallback.failed();
             }

@@ -80,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void wxpay(){
         //实例化微信支付策略
-        String wxAppId = "";
-        WXPay wxPay = WXPay.getInstance(this,wxAppId);
+        WXPay wxPay = WXPay.getInstance();
         //构造微信订单实体。一般都是由服务端直接返回。
         WXPayInfoImpli wxPayInfoImpli = new WXPayInfoImpli();
         wxPayInfoImpli.setTimestamp("");

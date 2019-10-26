@@ -49,5 +49,6 @@ dependencies {
     })
     api 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.4.0'
     compileOnly project(':easypay')
 }

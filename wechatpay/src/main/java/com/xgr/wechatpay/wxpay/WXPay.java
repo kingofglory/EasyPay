@@ -13,10 +13,11 @@ package com.xgr.wechatpay.wxpay;
 import android.app.Activity;
 import android.text.TextUtils;
 
-import com.tencent.mm.sdk.constants.Build;
-import com.tencent.mm.sdk.modelpay.PayReq;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.mm.opensdk.constants.Build;
+import com.tencent.mm.opensdk.modelbase.BaseResp;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.xgr.easypay.base.IPayStrategy;
 import com.xgr.easypay.callback.IPayCallback;
 
@@ -87,24 +88,28 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
         mWXApi.sendReq(req);
     }
 
-    //支付回调响应
+    /**
+     * 支付回调响应
+     */
     public void onResp(int error_code) {
         if(sPayCallback == null) {
             return;
         }
 
-        if(error_code == 0) {   //成功
+        if(error_code == BaseResp.ErrCode.ERR_OK) {
             sPayCallback.success();
-        } else if(error_code == -1) {   //错误
+        } else if(error_code == BaseResp.ErrCode.ERR_COMM) {
             sPayCallback.failed();
-        } else if(error_code == -2) {   //取消
+        } else if(error_code == BaseResp.ErrCode.ERR_USER_CANCEL) {
             sPayCallback.cancel();
         }
 
         sPayCallback = null;
     }
 
-    //检测是否支持微信支付
+    /**
+     * 检测是否支持微信支付
+     */
     private boolean check() {
         return mWXApi.isWXAppInstalled() && mWXApi.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
     }

@@ -2,6 +2,8 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
+[项目GitHub链接](https://github.com/kingofglory/EasyPay)
+
 [TOC]
 
 ## Vision (愿景)
@@ -100,8 +102,7 @@ implementation project(':unionpay')
 ``` java
     private void wxpay(){
         //实例化微信支付策略
-        String wxAppId = "";
-        WXPay wxPay = WXPay.getInstance(this,wxAppId);
+        WXPay wxPay = WXPay.getInstance();
         //构造微信订单实体。一般都是由服务端直接返回。
         WXPayInfoImpli wxPayInfoImpli = new WXPayInfoImpli();
         wxPayInfoImpli.setTimestamp("");
@@ -195,7 +196,7 @@ implementation project(':unionpay')
 ------
 
 ## 项目实现介绍
-易支付编码实现遵循设计模式六大原则，并且使用了单例以及策略模式来实现整个库,扩展性良好,可以轻松扩展其他支付方式如百度，美团等。支付方式类继承IPayStrategy接口，支付信息类实现IPayInfo接口，再分别传入场景类EasyPay中即可。具体请参照代码中支付宝或者微信或者银联支付方式封装。
+易支付编码实现遵循设计模式六大原则，并且使用了单例以及策略模式来实现整个库,扩展性良好,可以轻松扩展其他支付方式。
 
 ``` java
 ├── activity
@@ -226,7 +227,7 @@ implementation project(':unionpay')
 ------
 
 ## 框架扩展新的支付平台（如美团、京东等其他支付）
-EasyPay从立项之初，就充分考虑了代码扩展性，启用策略模式，全部采用面向接口编程，遵循依赖倒置设计原则。从支付基类扩展出新的支付非常容易。仅需三步。
+EasyPay从立项之初，就充分考虑了代码扩展性，启用策略模式，全部采用面向接口编程，遵循依赖倒置设计原则。从支付基类扩展出新的支付非常容易。仅需三步。下面给出参考步骤。更具体请参照项目中支付宝或者微信或者银联支付方式封装。
 ### 1) 支付订单信息类实现IPayInfo接口
 ```java
 public class XXpayInfoImpli implements IPayInfo {
@@ -239,7 +240,7 @@ public class XXpayInfoImpli implements IPayInfo {
 将第一步中支付实体类传入泛型。支付策略的初衷是将某种支付所有操作都进行集中封装，凡是业务需要用到该支付的地方，都调用这个类即可。
 ```java
 public class XXPay implements IPayStrategy<XXpayInfoImpli> {
-        private AlipayInfoImpli alipayInfoImpli;
+    private AlipayInfoImpli alipayInfoImpli;
     private static IPayCallback sPayCallback;
 
     @Override
@@ -284,6 +285,15 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 ------
 
+## (ChangeLog) 更新日志
+#### v2.0.0更新(2019/10/27)
+1. 精简微信支付集成和使用步骤，并更新微信支付SDK
+2. 更新支付宝SDK
+3. 更新银联SDK
+4. 支付回调fail方法返回code和message
+
+------
+
 ## 联系我
 
 #### 1) 有问题提[Issues](https://github.com/kingofglory/EasyPay/issues)。欢迎大家交流想法。
@@ -291,7 +301,7 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 #### 2) 邮箱联系(Email : kingofglory@yeah.net)
 
 #### 3) 付费加QQ群
-关于付费，由于有些同学可能对本框架不熟悉或者碰到了其他Android支付问题，需要快速咨询的，可以考虑付费入群，不保证能解决，但会尽力而为。或者有同学觉得用了我的框架，节省了时间，提高了效率的，愿意请我喝杯咖啡交个朋友的，也欢迎。感谢大家。
+关于付费，由于有些同学可能对本框架不熟悉或者碰到了其他Android支付问题，需要快速咨询的，可以考虑付费入群，不保证能解决，但会尽全力而为。或者有同学觉得用了我的框架，节省了时间，提高了效率的，愿意请我喝杯咖啡交个朋友的，也欢迎。感谢大家，希望一起起步。
 
 加群步骤：扫码支付时备注：easypay+你的qq号。我看到后将拉你入群。付款不退，慎重考虑。
 
@@ -299,15 +309,6 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
     <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/wechatpay.jpg">
     <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/alipay.jpg">
 </figure>
-
-------
-
-## (ChangeLog) 更新日志
-#### v2.0.0更新(2019/10/27)
-1. 精简微信支付集成和使用步骤，并更新微信支付SDK
-2. 更新支付宝SDK
-3. 更新银联SDK
-4. 支付回调fail方法返回code和message
 
 ------
 

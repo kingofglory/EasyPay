@@ -1,6 +1,6 @@
 package com.xgr.easypay.callback;
 
-/*
+/**
 ******************************* Copyright (c)*********************************\
 **
 **                 (c) Copyright 2017, King, china
@@ -12,6 +12,6 @@ package com.xgr.easypay.callback;
 */
 public interface IPayCallback {
     void success();
-    void failed();
+    void failed(int code, String message);
     void cancel();
 }

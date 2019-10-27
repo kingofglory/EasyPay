@@ -2,7 +2,7 @@ package com.xgr.alipay.alipay;
 
 import java.util.HashMap;
 
-/*
+/**
 ******************************* Copyright (c)*********************************\
 **
 **                 (c) Copyright 2017, King, china
@@ -53,5 +53,9 @@ public class ResultCode {
             return TEXT_ERROR;
         }
         return text;
+    }
+
+    public static int getIntCodeByString(String errorCode) {
+        return Integer.parseInt(errorCode);
     }
 }

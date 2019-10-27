@@ -73,7 +73,7 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
                 TextUtils.isEmpty(payInfoImpli.getNonceStr()) || TextUtils.isEmpty(payInfoImpli.getTimestamp()) ||
                 TextUtils.isEmpty(payInfoImpli.getSign())) {
             if(payCallback != null) {
-                payCallback.failed();
+                payCallback.failed(WXErrCodeEx.CODE_ILLEGAL_ARGURE, WXErrCodeEx.getMessageByCode(WXErrCodeEx.CODE_ILLEGAL_ARGURE));
             }
             return;
         }
@@ -84,7 +84,7 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
 
         if(!check()) {
             if(payCallback != null) {
-                payCallback.failed();
+                payCallback.failed(WXErrCodeEx.CODE_UNSUPPORT, WXErrCodeEx.getMessageByCode(WXErrCodeEx.CODE_UNSUPPORT));
             }
             return;
         }
@@ -104,17 +104,19 @@ public class WXPay implements IPayStrategy<WXPayInfoImpli> {
     /**
      * 支付回调响应
      */
-    public void onResp(int error_code) {
+    public void onResp(int errorCode, String errorMsg) {
         if(sPayCallback == null) {
             return;
         }
 
-        if(error_code == BaseResp.ErrCode.ERR_OK) {
+        if(errorCode == BaseResp.ErrCode.ERR_OK) {
             sPayCallback.success();
-        } else if(error_code == BaseResp.ErrCode.ERR_COMM) {
-            sPayCallback.failed();
-        } else if(error_code == BaseResp.ErrCode.ERR_USER_CANCEL) {
+        } else if(errorCode == BaseResp.ErrCode.ERR_COMM) {
+            sPayCallback.failed(errorCode, errorMsg);
+        } else if(errorCode == BaseResp.ErrCode.ERR_USER_CANCEL) {
             sPayCallback.cancel();
+        } else {
+            sPayCallback.failed(errorCode, errorMsg);
         }
 
         sPayCallback = null;

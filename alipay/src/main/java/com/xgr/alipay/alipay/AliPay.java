@@ -89,7 +89,7 @@ public class AliPay implements IPayStrategy<AlipayInfoImpli> {
                     } else {
                         // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
                         if (sPayCallback != null) {
-                            sPayCallback.failed();
+                            sPayCallback.failed(ResultCode.getIntCodeByString(resultStatus), ResultCode.getTextByCode(resultStatus));
                         }
                     }
                     break;

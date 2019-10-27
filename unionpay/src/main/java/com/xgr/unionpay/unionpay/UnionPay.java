@@ -64,7 +64,7 @@ public class UnionPay implements IPayStrategy<UnionPayInfoImpli> {
          * 支付控件返回字符串:success、fail、cancel 分别代表支付成功，支付失败，支付取消
          */
         String str = data.getExtras().getString("pay_result");
-        if (str.equalsIgnoreCase("success")) {
+        if (str.equalsIgnoreCase(UnionPayErrCode.RESPONSE_MESSAGE_SUCCESS)) {
             // 支付成功后，extra中如果存在result_data，取出校验
             // result_data结构见c）result_data参数说明
             if (data.hasExtra("result_data")) {
@@ -85,7 +85,7 @@ public class UnionPay implements IPayStrategy<UnionPayInfoImpli> {
                         // 验证不通过后的处理
                         // 建议通过商户后台查询支付结果
                         if (sPayCallback != null) {
-                            sPayCallback.failed();
+                            sPayCallback.failed(UnionPayErrCode.CODE_VERIFY_ERROR, UnionPayErrCode.MESSAGE_VERIFY_ERROR);
                         }
                     }
                 } catch (JSONException e) {
@@ -98,11 +98,11 @@ public class UnionPay implements IPayStrategy<UnionPayInfoImpli> {
                     sPayCallback.success();
                 }
             }
-        } else if (str.equalsIgnoreCase("fail")) {
+        } else if (str.equalsIgnoreCase(UnionPayErrCode.RESPONSE_MESSAGE_FAIL)) {
             if (sPayCallback != null) {
-                sPayCallback.failed();
+                sPayCallback.failed(UnionPayErrCode.CODE_FAIL, UnionPayErrCode.MESSAGE_FAIL);
             }
-        } else if (str.equalsIgnoreCase("cancel")) {
+        } else if (str.equalsIgnoreCase(UnionPayErrCode.RESPONSE_MESSAGE_CANCEL)) {
             if (sPayCallback != null) {
                 sPayCallback.cancel();
             }

@@ -36,7 +36,7 @@ public class WXPayActivity extends Activity implements IWXAPIEventHandler {
     @Override
     public void onResp(BaseResp baseResp) {
         if (baseResp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
-            WXPay.getInstance().onResp(baseResp.errCode);
+            WXPay.getInstance().onResp(baseResp.errCode, baseResp.errStr);
             finish();
         }
     }

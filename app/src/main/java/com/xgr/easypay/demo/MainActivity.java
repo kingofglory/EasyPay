@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void failed() {
+            public void failed(int code, String message) {
                 toast("支付失败");
             }
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void failed() {
+            public void failed(int code, String message) {
                 toast("支付失败");
             }
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void failed() {
+            public void failed(int code, String message) {
                 toast("支付失败");
             }
 

@@ -302,6 +302,15 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 ------
 
+## (ChangeLog) 更新日志
+#### v2.0.0更新(2019/10/27)
+1. 精简微信支付集成和使用步骤，并更新微信支付SDK
+2. 更新支付宝SDK
+3. 更新银联SDK
+4. 支付回调fail方法返回code和message
+
+------
+
 ## License
 
 	MIT License

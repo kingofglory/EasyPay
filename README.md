@@ -16,7 +16,7 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 
 ------
 
-## The present state （现状）
+## Why （为什么有这个库，因为现状太惨烈...）
 
 1. 支付平台众多。微信、支付宝、银联、京东、美团、百度等等，需要阅读各家文档，耗费大量时间精力。
 2. 集成步骤繁琐。集成过微信支付都知道，必须在包名下配置 ${applicationId}.wxapi.WXPayEntryActivity。。。
@@ -28,7 +28,7 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 我们能不能有一种多合一的库，可以省去纷繁的集成步骤，以统一的集成方式，统一的Api调用，统一的回调接收逻辑，同时兼具轻松扩展新的支付方式的能力，以满足支付功能需求。
 我给出的答案就是 EasyPay。EasyPay 已诞生三年，使用其实现支付功能的App超3000+，以其极简单的Api实现了多种支付功能得到开发者认可。
 
-## How (做了什么）
+## How (解决什么问题）
 
 1. EasyPay 用巧妙方式省去了微信支付必须配置wxapi.WXPayActivity的步骤，在客户端甚至你都不需要配置微信AppId
 2. EasyPay 分别封装了微信支付、支付宝支付、银联支付，单独成库，按需集成，所有库集成均一句代码完成

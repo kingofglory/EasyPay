@@ -1,23 +1,43 @@
-# EasyPay(易支付)---- 一个便捷易用的Android平台聚合支付框架
+## EasyPay(易支付)---- 一个便捷易用的 Android 平台聚合支付框架
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
 [项目GitHub链接](https://github.com/kingofglory/EasyPay)
 
-[TOC]
-
 ## Vision (愿景)
-### 成为Android平台最便捷易用的支付框架
+成为 Android 平台最便捷易用的支付框架
 
 ------
 
 ## Introduction（介绍）
-This is a framework for Android Developers easily to use Alipay,WechatPay and UnionPay in Android project.
+EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付宝支付以银联支付。使用此库，开发者可以使用简单轻松方便的 Api 实现支付功能，大量节省集成配置时间。
 
-EasyPay(易支付)集成并高度封装了Android平台的微信支付，支付宝支付以银联支付。使用此库，开发者可以使用简单轻松方便的api实现支付功能，大量节省集成配置时间。
+This is a library for Android Developers easily to use Alipay, WechatPay and UnionPay in Android project.
 
 ------
 
+## The present state （现状）
+
+1. 支付平台众多。微信、支付宝、银联、京东、美团、百度等等，需要阅读各家文档，耗费大量时间精力。
+2. 集成步骤繁琐。集成过微信支付都知道，必须在包名下配置 ${applicationId}.wxapi.WXPayEntryActivity。。。
+3. Api 调用方式不一致。同样的功能，代码差异很大，增加理解成本。
+4. 支付结果接收逻辑分散。调用方法与接受结果代码不在同一个地方，逻辑分散，可读性和可维护性差。
+
+## Think deeply (思考与期望)
+
+我们能不能有一种多合一的库，可以省去纷繁的集成步骤，以统一的集成方式，统一的Api调用，统一的回调接收逻辑，同时兼具轻松扩展新的支付方式的能力，以满足支付功能需求。
+我给出的答案就是 EasyPay。EasyPay 已诞生三年，使用其实现支付功能的App超3000+，以其极简单的Api实现了多种支付功能得到开发者认可。
+
+## How (做了什么）
+
+1. EasyPay 用巧妙方式省去了微信支付必须配置wxapi.WXPayActivity的步骤，在客户端甚至你都不需要配置微信AppId
+2. EasyPay 分别封装了微信支付、支付宝支付、银联支付，单独成库，按需集成，所有库集成均一句代码完成
+3. EasyPay 统一支付调用接口，统一支付结果接收回调，调用代码与接收结果代码集中在一起
+4. EasyPay 预留扩展其他支付方式接口
+5. EasyPay 甚至抽空用反射解决了银联SDK因持有静态Context导致的内存泄漏问题（该问题三年前我反映后六个月也没解决。。。，所以只有自己动手，丰衣足食）
+6. EasyPay 让你省出时间陪女朋友，哈哈哈哈哈哈（if 没有 那省出时间让你去找啊，还指望我给你new 一个对象啊。。。）
+
+有人会说，No Picture, you say a XX。OK, 明白的，安排！
 ## Screenshot（支付效果图）
 
 ![screenshot.gif](https://github.com/kingofglory/EasyPay/blob/master/screensshot/screenshot.gif)

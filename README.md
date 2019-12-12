@@ -320,21 +320,9 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 #### 2) 邮箱联系(Email : kingofglory@yeah.net)
 
-#### 3) 付费加QQ群
-关于为什么，说几点：
-1. 维护群和解答问题将耗费作者额外时间和精力；
-2. 付费将迫使同学们为了不付费而更加认真去思考问题和查看源码；
-3. 有同学觉得用了我的框架，节省了时间，提高了效率的，愿意请我喝杯咖啡交个朋友的，非常欢迎；
-4. 有些同学可能对本框架不熟悉或者碰到了其他Android支付问题，需要快速咨询的，可以考虑付费入群，不保证能解决，但会尽全力而为。
+#### 3) 限时免费加QQ群（群号：797559567）
 
 感谢大家，希望一起起步。
-
-加群步骤：扫码支付时备注：easypay+你的qq号。我看到后将拉你入群。付款不退，慎重考虑。
-
-<figure class="half">
-    <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/wechatpay.jpg">
-    <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/alipay.jpg">
-</figure>
 
 ------
 

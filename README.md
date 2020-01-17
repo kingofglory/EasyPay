@@ -16,7 +16,7 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 
 ------
 
-## Why （为什么有这个库，因为现状太惨烈...）
+## Why （为什么有这个库）
 
 1. 支付平台众多。微信、支付宝、银联、京东、美团、百度等等，需要阅读各家文档，耗费大量时间精力。
 2. 集成步骤繁琐。集成过微信支付都知道，必须在包名下配置 ${applicationId}.wxapi.WXPayEntryActivity。。。

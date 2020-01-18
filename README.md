@@ -16,7 +16,7 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 
 ------
 
-## Why （为什么有这个库，因为现状太惨烈...）
+## Why （为什么有这个库）
 
 1. 支付平台众多。微信、支付宝、银联、京东、美团、百度等等，需要阅读各家文档，耗费大量时间精力。
 2. 集成步骤繁琐。集成过微信支付都知道，必须在包名下配置 ${applicationId}.wxapi.WXPayEntryActivity。。。
@@ -320,21 +320,9 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 #### 2) 邮箱联系(Email : kingofglory@yeah.net)
 
-#### 3) 付费加QQ群
-关于为什么，说几点：
-1. 维护群和解答问题将耗费作者额外时间和精力；
-2. 付费将迫使同学们为了不付费而更加认真去思考问题和查看源码；
-3. 有同学觉得用了我的框架，节省了时间，提高了效率的，愿意请我喝杯咖啡交个朋友的，非常欢迎；
-4. 有些同学可能对本框架不熟悉或者碰到了其他Android支付问题，需要快速咨询的，可以考虑付费入群，不保证能解决，但会尽全力而为。
+#### 3) 限时免费加QQ群（群号：797559567）
 
 感谢大家，希望一起起步。
-
-加群步骤：扫码支付时备注：easypay+你的qq号。我看到后将拉你入群。付款不退，慎重考虑。
-
-<figure class="half">
-    <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/wechatpay.jpg">
-    <img src="https://github.com/kingofglory/EasyPay/blob/master/screensshot/alipay.jpg">
-</figure>
 
 ------
 

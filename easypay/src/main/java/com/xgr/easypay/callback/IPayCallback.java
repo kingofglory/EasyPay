@@ -1,5 +1,7 @@
 package com.xgr.easypay.callback;
 
+import android.support.annotation.Nullable;
+
 /**
 ******************************* Copyright (c)*********************************\
 **
@@ -12,6 +14,6 @@ package com.xgr.easypay.callback;
 */
 public interface IPayCallback {
     void success();
-    void failed(int code, String message);
+    void failed(int code,@Nullable String message);
     void cancel();
 }

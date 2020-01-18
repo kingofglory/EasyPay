@@ -309,6 +309,7 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 #### v2.0.1 更新 （2020/01/18)
 1. Fixed issue [Kotlin项目中调用支付回调失败时Msg为空会报错](https://github.com/kingofglory/EasyPay/issues/4)
 2. 将支付宝依赖库从impletation引用方式改为 api 引用。以便在库外部也可以引用相关类。
+3. 添加微信和支付宝混淆配置。
 
 #### v2.0.0更新(2019/10/27)
 1. 极限地精简微信支付集成和使用步骤，并更新微信支付SDK

@@ -23,3 +23,13 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# 微信支付
+-keep class com.tencent.mm.opensdk.** {
+     *;
+ }
+-keep class com.tencent.wxop.** {
+     *;
+ }
+-keep class com.tencent.mm.sdk.** {
+     *;
+ }

@@ -10,10 +10,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        manifestPlaceholders = [ // 配置给微信支付使用
-                APPLICATION_ID: applicationId,
-        ]
     }
     buildTypes {
         release {

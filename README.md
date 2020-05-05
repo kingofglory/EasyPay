@@ -110,15 +110,7 @@ implementation project(':unionpay')
 
 ### 使用步骤二、相关支付Api调用
 
-#### 微信支付（共两步）
-##### 1）配置
-在项目主App模块的build.gradle文件的android{}块->defaultConfig{}块中配置applicationId,具体如下：
-```java
-        manifestPlaceholders = [
-                APPLICATION_ID: applicationId,
-        ]
-```
-##### 2）api调用
+#### 微信支付（共一步）
 ``` java
     private void wxpay(){
         //实例化微信支付策略

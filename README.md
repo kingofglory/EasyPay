@@ -329,14 +329,8 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 ### 1. [JasonHezz](https://github.com/JasonHezz)
 
-## 谁在用EasyPay
-
-发布以来，EasyPay在jcenter下载量为3000+，我本想在这里罗列一些使用者应用，不过联系到的人很少，希望使用了EasyPay的开发者联系上，在这项加上你们的应用，增加可信度，让EasyPay帮助到更多开发者，节省更多时间。
-
  图标 | 名字 | 链接 
-
 -|-|-
-
 ![我一点都不可口](https://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/striphttps://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/strip) | 我一点都不可口 | https://www.taptap.com/app/42311
 
 ## License

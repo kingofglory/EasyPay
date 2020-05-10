@@ -16,6 +16,8 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 
 ------
 
+着急使用请直接去看下面的 **Usage(使用)**
+
 ## Why （为什么有这个库）
 
 1. 支付平台众多。微信、支付宝、银联、京东、美团、百度等等，需要阅读各家文档，耗费大量时间精力。
@@ -45,70 +47,47 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 ------
 
 ## Usage（使用）
-使用步骤非常简单，总共两步：1.集成依赖库；2.相关支付Api调用。
+使用步骤非常简单，总共两步：
+
+1.集成依赖库；
+
+2.相关支付Api调用。
 
 ### 使用步骤一、 集成依赖库
 集成方式有以下两种，根据需要选择其中一种集成即可：
 
-**远程依赖库集成方式**  Or **下载源码作为Module导入集成方式**；
+1. **jcenter 集成方式**
+2. **下载源码作为Module导入集成方式**
 
 
-#### 远程依赖库集成方式
+#### 1. jcenter集成方式
 
-在Project中主App模块中的build.gradle的dependencies块中添加以下依赖：
+在 Project中主 App 模块中的 build.gradle 的dependencies 块中添加以下依赖。EasyPay 基类库为**必选**， wxchatpay, alipay, unionpay根据业务需要自行选择接入。
 
-#### 1) EasyPay支付基类库（必选）:
-> 注意：本步骤必须添加，因为该库是EasyPay基类库
+```java
+implementation 'com.xgr.easypay:EasyPay:2.0.1'   // 基类库，必选
+implementation 'com.xgr.easypay:wechatpay:2.0.1' // 微信支付，可选
+implementation 'com.xgr.easypay:alipay:2.0.1'    // 支付宝支付，可选
+implementation 'com.xgr.easypay:unionpay:2.0.1'  // 银联支付，可选
+```
 
-	implementation 'com.xgr.easypay:EasyPay:2.0.0'
+jcenter 集成方式到此结束。
 
-#### 2) 根据需要集成微信支付、支付宝支付、银联支付
-> 注意：以下三个库可根据实际需要增删
-
-##### 1）微信支付集成（可选）：
-
-    implementation 'com.xgr.easypay:wechatpay:2.0.0'
-
-##### 2）支付宝支付集成（可选）：
-
-    implementation 'com.xgr.easypay:alipay:2.0.0'
-
-##### 3）银联支付集成（可选）：
-
-    implementation 'com.xgr.easypay:unionpay:2.0.0'
-
-远程依赖集成方式到此结束。
-
-#### 下载源码后作为module导入：
+#### 2. 下载源码后作为module导入：
 
 #### 1) 集成基类依赖库（必选）：
 ```java
-implementation project(':easypay')
-```
-
-#### 2) 根据需要集成其他支付依赖库
-
-##### 1）微信支付集成（可选）：
-
-```java
-implementation project(':wechatpay')
-```
-##### 2）支付宝集成（可选）：
-
-```java
-implementation project(':alipay')
-```
-##### 3）银联支付集成（可选）：
-
-```java
-implementation project(':unionpay')
+implementation project(':easypay')   // 基类库，必选
+implementation project(':wechatpay') // 微信支付，可选
+implementation project(':alipay')    // 支付宝支付，可选
+implementation project(':unionpay')  // 银联支付，可选
 ```
 下载源码作为Module导入集成方式到此结束。
 
 ------
 
-
 ### 使用步骤二、相关支付Api调用
+本步骤将服务端生成的订单相关信息传入相关支付api。
 
 #### 微信支付（共一步）
 ``` java
@@ -298,6 +277,9 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 ------
 
 ## (ChangeLog) 更新日志
+#### v2.0.2 更新 （2020/05/10) 本次更新尚未发布到jcenter，请稍候
+1. 实现微信支付零配置
+
 #### v2.0.1 更新 （2020/01/18)
 1. Fixed issue [Kotlin项目中调用支付回调失败时Msg为空会报错](https://github.com/kingofglory/EasyPay/issues/4)
 2. 将支付宝依赖库从impletation引用方式改为 api 引用。以便在库外部也可以引用相关类。
@@ -343,7 +325,7 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 	MIT License
 
 	
-	Copyright (c) 2017 kingofglory
+	Copyright (c) 2020 kingofglory
 	
 
 	Permission is hereby granted, free of charge, to any person obtaining a copy

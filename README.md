@@ -277,7 +277,7 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 ------
 
 ## (ChangeLog) 更新日志
-#### v2.0.2 更新 （2020/05/10) 本次更新尚未发布到jcenter，请稍候
+#### v2.0.2 更新 （2020/05/10)
 1. 实现微信支付零配置
 
 #### v2.0.1 更新 （2020/01/18)

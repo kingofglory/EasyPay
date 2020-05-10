@@ -327,7 +327,8 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 在EasyPay发布以来，有不少开发者提出过宝贵意见，还有一些动手能力强的提交了优化的pr，在此表示万分感谢，很高兴你们深入地去使用了这个项目，并且提出了自己的想法，让EasyPay变得更好。以下排名仅根据提交pr时间， 不分先后。
 
-### 1. [JasonHezz](https://github.com/JasonHezz)
+### 1. [HadesHe](https://github.com/HadesHe)
+### 2. [JasonHezz](https://github.com/JasonHezz)
 
 ## 谁在用EasyPay
 

@@ -30,8 +30,8 @@ dependencies {
     api project(':unionpay')
     api project(':wechatpay')
     api project(':alipay')
-//    compile 'com.xgr.easypay:EasyPay:2.0.0'
-//    compile 'com.xgr.easypay:alipay:2.0.0'
-//    compile 'com.xgr.easypay:unionpay:2.0.0'
-//    compile 'com.xgr.easypay:wechatpay:2.0.0'
+//    compile 'com.xgr.easypay:EasyPay:2.0.3'
+//    compile 'com.xgr.easypay:alipay:2.0.3'
+//    compile 'com.xgr.easypay:unionpay:2.0.3'
+//    compile 'com.xgr.easypay:wechatpay:2.0.3'
 }

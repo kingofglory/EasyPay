@@ -21,6 +21,9 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { url 'https://dl.bintray.com/kingofglory/maven' }
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 

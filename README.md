@@ -65,10 +65,10 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 在 Project中主 App 模块中的 build.gradle 的dependencies 块中添加以下依赖。EasyPay 基类库为**必选**， wxchatpay, alipay, unionpay根据业务需要自行选择接入。
 
 ```java
-implementation 'com.xgr.easypay:EasyPay:2.0.3'   // 基类库，必选
-implementation 'com.xgr.easypay:wechatpay:2.0.3' // 微信支付，可选
-implementation 'com.xgr.easypay:alipay:2.0.3'    // 支付宝支付，可选
-implementation 'com.xgr.easypay:unionpay:2.0.3'  // 银联支付，可选
+implementation 'com.xgr.easypay:EasyPay:2.0.4'   // 基类库，必选
+implementation 'com.xgr.easypay:wechatpay:2.0.4' // 微信支付，可选
+implementation 'com.xgr.easypay:alipay:2.0.4'    // 支付宝支付，可选
+implementation 'com.xgr.easypay:unionpay:2.0.4'  // 银联支付，可选
 ```
 
 jcenter 集成方式到此结束。
@@ -277,6 +277,10 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 ------
 
 ## (ChangeLog) 更新日志
+
+#### v2.0.4 更新 （2020/05/24)
+1. 更新银联信赖库，补全armeabi-v7a, arm64-v8a以及x86_64架构so文件
+
 #### v2.0.3 更新 （2020/05/23)
 1. 解决支付宝PayTask找不到类
 

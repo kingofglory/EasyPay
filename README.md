@@ -325,7 +325,8 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
  图标 | 名字 | 链接 
 -|-|-
-![我一点都不可口](https://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/striphttps://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/strip) | 我一点都不可口 | https://www.taptap.com/app/42311
+![我一点都不可口](https://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/striphttps://img.tapimg.com/market/lcs/ccd6c2a135ded0ecd74c9302b6162dd8_360.png?imageMogr2/auto-orient/strip) | 我一点都不可口 | [下载链接](https://www.taptap.com/app/42311)
+![船货宝](https://sj.qq.com/myapp/detail.htm?apkName=com.sunnet.shipcargo) | 船货宝 | [下载链接](https://pp.myapp.com/ma_icon/0/icon_42319042_1568087778/96)
 
 ## License
 
